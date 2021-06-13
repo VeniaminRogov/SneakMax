@@ -1,32 +1,39 @@
 <header class="header">
-  <div class="container">
-    <a class="header__logo" href="#">SneakMax</a>
-
-    <nav class="header__nav">
-      <ul class="menu">
-        <li class="menu__item">
-          <a class="menu__link" href="#">Каталог</a>
-        </li>
-        <li class="menu__item">
-          <a class="menu__link" href="#">О нас</a>
-        </li>
-        <li class="menu__item">
-          <a class="menu__link" href="#">Подбор товара</a>
-        </li>
-        <li class="menu__item">
-          <a class="menu__link" href="#">Наша команда</a>
-        </li>
-        <li class="menu__item">
-          <a class="menu__link" href="#">Доставка и оплата</a>
-        </li>
-        <li class="menu__item">
-          <!-- <a class="menu__link" href="#">Контакты</a> -->
-          <a class="menu__link" href="#">Контакты</a>
-        </li>
-        <li class="menu__item">
-          <a class="menu__link" href="#">Корзина</a>
-        </li>
-      </ul>
-    </nav>
+  <div class="container grid header__container">
+    <div class="header__left">
+      <a class="logo header__logo" href="#">SneakMax</a>
+    </div>
+    <div class="header__right">
+      <nav class="header__nav">
+        <ul class="nav lsit-reset">
+          <li class="nav__item">
+            <a class="nav__link" href="#">Каталог</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">О нас</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Подбор товара</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Наша команда</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Доставка и оплата</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="cart">
+        <button class="btn-reset cart__btn">
+          <svg>
+            <use xlink:href="img/sprite.svg#cart"></use>
+          </svg>
+          <div class="cart__count">1</div>
+        </button>
+      </div>
+    </div>
   </div>
 </header>

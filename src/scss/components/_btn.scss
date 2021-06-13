@@ -1,0 +1,36 @@
+.btn-reset {
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  padding: 22px 47px;
+  font: $f-middle-regular;
+  border-radius: 4px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn--primary {
+  color: $color-white;
+  background-color: $color-accent;
+
+  &:hover {
+    background-color: $color-accent-hover;
+  }
+}
+
+.btn--secondary {
+  color: $color-white;
+  background-color: $color-main;
+
+  &:hover {
+    background-color: $color-main-hover;
+  }
+}

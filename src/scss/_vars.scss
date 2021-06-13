@@ -1,5 +1,32 @@
-// COLORS
-:root {
-  --color-black: #000;
-  --color-white: #fff;
-}
+// Colors
+
+$color-black: #000;
+$color-white: #fff;
+$color-eastbay: #484283;
+$color-accent: #f14f4f;
+$color-accent-hover: #cc4949;
+$color-main: #444b58;
+$color-main-hover: #31343c;
+$color-cameo: #dbbba9;
+$color-gray: #b2b5bb;
+$color-about-bg: #484283;
+
+//offsets
+$grid-gap: 20px;
+$big-offset: 60px;
+$main-offset: 40px;
+$second-offset: 20px;
+$small-offset: 10px;
+
+//Fonts
+$font-family: "Intro", sans-serif;
+$f-heigh: 700 200px / 140% $font-family;
+$f-middle-bold: 700 30px / 140% $font-family;
+$f-small-bold: 700 20px / 140% $font-family;
+$f-preheigh-regular: 600 20px / 20px $font-family;
+$f-middle-regular: 600 16px / 20px $font-family;
+$f-preheigh-book: 400 24px / 140% $font-family;
+$f-middle-book: 400 16px / 140% $font-family;
+$f-small-book: 400 14px / 140% $font-family;
+
+$z-index: 1000;

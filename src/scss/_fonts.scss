@@ -1,1 +1,27 @@
-// @include font-face("Muller", "../fonts/MullerRegular", 400, normal);
+@include font-face("Intro", "../fonts/IntroRegular", 400, normal);
+@include font-face("Intro", "../fonts/IntroBook", 400, normal);
+@include font-face("Intro", "../fonts/IntroBold", 700, normal);
+
+/* @font-face {
+  font-family: "Intro-Regular", sans-serif;
+  src: url("../resources/fonts/IntroRegular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Intro-Book", sans-serif;
+  src: url("../resources/fonts/IntroBook.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Intro-Bold", sans-serif;
+  src: url("../resources/fonts/IntroBold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+} */

@@ -1,0 +1,46 @@
+.hero {
+  height: 568px;
+  padding: 100px 0;
+  background-color: $color-eastbay;
+  position: relative;
+}
+
+.hero__container {
+  position: relative;
+  z-index: 5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hero__bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  margin-top: 55px;
+  margin-left: 50px;
+  transform: translate(-50%, -50%);
+  font: $f-heigh;
+  color: rgba($color-white, 0.12);
+}
+
+.hero__title {
+  margin-top: 50px;
+  max-width: 50%;
+  font: 700 36px/ 140% $font-family;
+  color: $color-white;
+}
+
+.hero__descr {
+  max-width: calc(50% - 100px);
+  font: $f-middle-book;
+  color: $color-white;
+  margin-top: $second-offset;
+}
+
+.hero__btn {
+  margin-top: $main-offset;
+}

@@ -1,5 +1,36 @@
-//
 .header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: $z-index;
+}
+
+.header__container {
+  $paddings: 15px;
+
+  padding: $second-offset $paddings;
+  align-items: center;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - (#{$paddings} * 2));
+    height: 1px;
+    background-color: rgba($color-white, 0.8);
+  }
+}
+
+.header__left {
+  grid-column: 2 span;
+}
+
+.header__right {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  grid-column: 10 span;
 }

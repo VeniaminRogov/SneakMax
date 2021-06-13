@@ -8,9 +8,20 @@ html {
   box-sizing: inherit;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 body {
   margin: 0;
-  font-family: "asd", sans-serif;
+  font: $f-middle-book;
+  color: $color-main;
   background-color: var(--color-white);
 }
 
@@ -20,11 +31,6 @@ img {
 
 a {
   text-decoration: none;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
 }
 
 .is-outer {
@@ -52,18 +58,46 @@ ul {
   border: 2px #ff4019 solid !important; // stylelint-disable-line declaration-no-important
 }
 
-.btn-reset {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-}
-
 .container {
   margin: 0 auto;
   padding: 0 15px;
-  max-width: 1200px;
+  max-width: 1210px;
 }
 
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: $grid-gap;
+}
+
+.title {
+  font: $f-middle-bold;
+  color: $color-main;
+}
+
+@import "mixins";
+
+.custom-checkbox {
+  @include custom-checkbox;
+  padding-left: 10px;
+
+  &__content {
+    &::before {
+      border-color: $color-cameo;
+      border-radius: 4px;
+      width: 24px;
+      height: 24px;
+    }
+
+    &::after {
+      width: 24px;
+      height: 24px;
+      background-image: url(../img/check.svg);
+      background-size: 15px 12px;
+    }
+  }
 }
