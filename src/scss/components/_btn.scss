@@ -14,7 +14,7 @@
   padding: 22px 47px;
   font: $f-middle-regular;
   border-radius: 4px;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .btn--primary {
@@ -32,5 +32,15 @@
 
   &:hover {
     background-color: $color-main-hover;
+  }
+}
+
+.btn--next {
+  border: 1px solid $color-main;
+  padding: 14px 41px;
+
+  &:hover {
+    color: $color-white;
+    background-color: $color-main;
   }
 }

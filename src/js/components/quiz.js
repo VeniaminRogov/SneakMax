@@ -34,33 +34,33 @@ const quizData = [{
     answer_alias: "size",
     answers: [{
         answer_title: "менее 36",
-        type: "chekbox"
+        type: "checkbox"
       },
       {
         answer_title: "36-38",
-        type: "chekbox"
+        type: "checkbox"
       },
       {
         answer_title: "39-41",
-        type: "chekbox"
+        type: "checkbox"
       }, ,
       {
         answer_title: "42-44",
-        type: "chekbox"
+        type: "checkbox"
       }, ,
       {
         answer_title: "45 и больше",
-        type: "chekbox"
+        type: "checkbox"
       },
     ]
   },
   {
     number: 3,
     title: "Уточните какие-либо моменты",
-    answer_alias: "phone",
+    answer_alias: "message",
     answers: [{
       answer_title: "Введите телефон",
-      type: "text"
+      type: "textarea"
     }, ]
   },
   {
@@ -84,23 +84,36 @@ const quizTemplate = (data = [], dataLength = 0, options) => {
     nextBtnText
   } = options;
   const answers = data.answers.map(item => {
-    return `
+    if (item.type === 'checkbox') {
+      return `
+			<li class="quiz-queistion__item">
+        <img class="quiz-queistion__img" src="./img/question-img.jpg" alt="кроссовок">
+        <label class="custom-checkbox">
+          <input type="${item.type}" class="custom-checkbox__field" data-valid="false" class="quiz-question__answer" name="${data.answer_alias}" ${item.type == 'text' ? 'placeholder="Введите ваш вариант"' : ''} value="${item.type !== 'text' ? item.answer_title : ''}">
+          <span class="custom-checkbox__content">${item.answer_title}</span>
+        </label>
+      </li>
+		`;
+    } else {
+      return `
 			<label class="quiz-question__label">
 				<input type="${item.type}" data-valid="false" class="quiz-question__answer" name="${data.answer_alias}" ${item.type == 'text' ? 'placeholder="Введите ваш вариант"' : ''} value="${item.type !== 'text' ? item.answer_title : ''}">
 				<span>${item.answer_title}</span>
 			</label>
 		`;
+    }
   });
-
   return `
-		<div class="quiz__content">
-			<div class="quiz__questions">${number} из ${dataLength}</div>
+		<div class="quiz-questions">
 			<div class="quiz-question">
 				<h3 class="quiz-question__title">${title}</h3>
-				<div class="quiz-question__answers">
+				<ul class="quiz-question__list">
 					${answers.join('')}
-				</div>
-				<button type="button" class="quiz-question__btn" data-next-btn>${nextBtnText}</button>
+				</ul>
+        <div class="quiz-bottom">  
+			    <div class="quiz__count">${number} из ${dataLength}</div>
+          <button type="button" class="quiz-question__btn btn btn-reset btn--next" data-next-btn>${nextBtnText}</button>
+        </div>
 			</div>
 		</div>
 	`
@@ -252,7 +265,7 @@ class Quiz {
   }
 }
 
-window.quiz = new Quiz('.quiz-content', quizData, {
-  nextBtnText: "Далее",
+window.quiz = new Quiz('.quiz-form', quizData, {
+  nextBtnText: "Следующий шаг",
   sendBtnText: "Отправить",
 });
