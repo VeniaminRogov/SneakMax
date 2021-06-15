@@ -62,15 +62,6 @@ const quizData = [{
       answer_title: "Введите телефон",
       type: "textarea"
     }, ]
-  },
-  {
-    number: 4,
-    title: "Оставьте свои контактные данные, чтобы бы мы могли отправить  подготовленный для вас каталог",
-    answer_alias: "phone",
-    answers: [{
-      answer_title: "Введите телефон",
-      type: "text"
-    }, ]
   }
 ];
 
@@ -94,6 +85,12 @@ const quizTemplate = (data = [], dataLength = 0, options) => {
         </label>
       </li>
 		`;
+    } else if (item.type === 'textarea') {
+      return `
+      <label class="quiz-question__label">
+        <textarea placeholder="${item.answer_title}" class="quiz-question__message"></textarea>
+      </label>
+      `
     } else {
       return `
 			<label class="quiz-question__label">
@@ -104,7 +101,6 @@ const quizTemplate = (data = [], dataLength = 0, options) => {
     }
   });
   return `
-		<div class="quiz-questions">
 			<div class="quiz-question">
 				<h3 class="quiz-question__title">${title}</h3>
 				<ul class="quiz-question__list">
@@ -115,7 +111,6 @@ const quizTemplate = (data = [], dataLength = 0, options) => {
           <button type="button" class="quiz-question__btn btn btn-reset btn--next" data-next-btn>${nextBtnText}</button>
         </div>
 			</div>
-		</div>
 	`
 };
 
@@ -146,10 +141,14 @@ class Quiz {
         this.$el.innerHTML = quizTemplate(this.data[this.counter], this.dataLength, this.options);
 
         if ((this.counter + 1 == this.dataLength)) {
-          this.$el.insertAdjacentHTML('beforeend', `<button type="button" data-send>${this.options.sendBtnText}</button>`)
-          this.$el.querySelector('[data-next-btn]').remove();
+          //   this.$el.querySelector('.quiz-bottom').insertAdjacentHTML('beforeend', `<button type="button" data-send>${this.options.sendBtnText}</button>`)
+          //   this.$el.querySelector('[data-next-btn]').remove();
+
         }
       } else {
+        document.querySelector('.quiz-questions').style.display = 'none';
+        document.querySelector('.asd').style.display = 'block';
+
         console.log('А все! конец!');
       }
     } else {
@@ -185,7 +184,14 @@ class Quiz {
   }
 
   valid() {
+    let textarea = document.querySelector('textarea');
     let isValid = false;
+    if (textarea) {
+      if (textarea.value.length > 0) {
+        isValid = true;
+        return isValid;
+      }
+    }
     let elements = this.$el.querySelectorAll('input')
     elements.forEach(el => {
       switch (el.nodeName) {
@@ -265,7 +271,7 @@ class Quiz {
   }
 }
 
-window.quiz = new Quiz('.quiz-form', quizData, {
+window.quiz = new Quiz('.quiz-form .quiz-questions', quizData, {
   nextBtnText: "Следующий шаг",
   sendBtnText: "Отправить",
 });
