@@ -1,42 +1,44 @@
 .team {
-  background-color: $color-about-bg;
+  position: relative;
+  background-color: $color-eastbay;
+  padding: $big-offset 0;
 }
 
 .team__figure {
-  display: block;
   position: absolute;
   right: 0;
   top: 0;
 }
 
 .team__list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  position: relative;
   gap: $main-offset 15px;
+}
+
+.team__item {
+  grid-column: 4 span;
+}
+
+.team__img {
+  border-radius: 4px;
 }
 
 .team__title {
   color: $color-white;
-  padding: 60px 0 $main-offset;
+  padding-bottom: $second-offset;
 }
 
-.team__img {
-  // display: block;
-  // width: 100%;
-  // height: 100%;
-  // object-fit: cover;
-}
-
-.team__name {
+.team__name,
+.team__descr {
   display: block;
   margin-top: $second-offset;
+}
+.team__name {
   font: $f-preheigh-bold;
   color: $color-white;
 }
 
 .team__descr {
-  display: block;
-  margin-top: $second-offset;
   font: $f-middle-book;
   color: $color-white;
 }

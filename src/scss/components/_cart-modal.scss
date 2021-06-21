@@ -1,0 +1,151 @@
+.cart-modal {
+  width: 580px;
+  padding: $main-offset;
+  border-radius: 4px;
+}
+
+.cart-modal__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $main-offset;
+}
+
+.cart-modal__title {
+  font: $f-middle-bold;
+}
+
+.cart-modal__order-num {
+  color: $color-gray;
+  font: $f-small-book;
+}
+
+.cart-modal-order__top {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $main-offset;
+}
+
+.cart-modal-order__count,
+.cart-modal-order__sum {
+  display: block;
+  color: $color-gray;
+
+  span {
+    font: $f-small-bold;
+    color: $color-main;
+  }
+}
+
+.cart-modal-order__count {
+  margin-bottom: $second-offset;
+}
+
+.cart-modal-order__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 30px;
+  margin-bottom: $main-offset;
+}
+
+.cart-modal-order__show {
+  display: inline-flex;
+  align-items: center;
+  font: $f-middle-book;
+  color: $color-main;
+  margin-bottom: 35px;
+
+  svg {
+    width: 7px;
+    height: 4px;
+    margin-left: 5px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &--active {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.cart-modal-order__list {
+  display: none;
+
+  &--visible {
+    display: block;
+  }
+}
+
+.cart-modal-order__item {
+  &:not(:last-child) {
+    margin-bottom: 35px;
+  }
+}
+
+.cart-modal-product {
+  display: flex;
+  align-items: center;
+}
+
+.cart-modal-product__img {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  margin-right: $small-offset;
+}
+
+.cart-modal-product__content {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.cart-modal-product__text {
+  max-width: 290px;
+  margin-right: auto;
+  margin-bottom: $second-offset;
+}
+
+.cart-modal-product__title {
+  font: $f-small-book;
+  line-height: 14px;
+  color: #4d4d4d;
+}
+
+.cart-modal-product__price {
+  display: inline-block;
+  font: $f-middle-bold;
+}
+
+.cart-modal-product__delete {
+  font: $f-small-book;
+  color: $color-gray;
+}
+
+.cart-order-modal__input {
+  background-color: #f7f7f7;
+  border: 1px solid #d9d9d9;
+  margin-bottom: $small-offset;
+
+  &:nth-child(3) {
+    margin-bottom: 0;
+  }
+}
+
+.cart-order-modal__btn {
+  margin-top: 30px;
+}

@@ -1,0 +1,17 @@
+.social__list {
+  display: flex;
+}
+
+.social__item {
+  margin-right: 20px;
+}
+
+.social__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  background-color: #0e5a4c;
+}

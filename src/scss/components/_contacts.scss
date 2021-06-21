@@ -1,0 +1,37 @@
+.contacts {
+  background-color: #f3f7f6;
+  padding: $big-offset 0;
+}
+.contacts__title {
+}
+.contacts__container {
+  display: flex;
+  justify-content: space-between;
+}
+.contacts__inner {
+  margin-right: $small-offset;
+  width: calc(100% - (680px - #{$small-offset}));
+}
+.contacts__list {
+  padding-top: $big-offset;
+}
+.contacts__item {
+  padding-bottom: $main-offset;
+}
+.contacts__subtitle {
+  font: $f-small-book;
+  color: #b2b5bb;
+  text-transform: uppercase;
+  padding-bottom: $main-offset;
+}
+.contacts__telephone {
+  padding-bottom: 10px;
+}
+.contacts__telephone-link {
+  font: $f-heigh-regular;
+  color: $color-main;
+}
+.contacts__map {
+  width: 680px;
+  height: 500px;
+}

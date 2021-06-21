@@ -1,0 +1,15 @@
+.callback-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $main-offset $second-offset;
+  justify-content: center;
+}
+
+.callback-form__input {
+  margin-bottom: $small-offset;
+}
+
+.callback-form__btn {
+  width: 100%;
+}
